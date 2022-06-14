@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1320.0" style="-fx-background-color: #252422; -fx-background-radius: 30; -fx-border-style: solid; -fx-border-color: #ffca00; -fx-border-radius: 30; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.ScreenLoader">
+   <children>
+      <ProgressBar fx:id="bar" layoutX="202.0" layoutY="563.0" prefHeight="26.0" prefWidth="896.0" progress="0.0" />
+      <Button fx:id="btn" layoutX="526.0" layoutY="407.0" mnemonicParsing="false" onAction="#enter" style="-fx-background-color: #252422; -fx-background-radius: 15; -fx-border-style: solid; -fx-border-color: white; -fx-border-width: 3; -fx-border-radius: 10;" text="Enter to App" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Glow level="0.05" />
+         </effect>
+      </Button>
+      <Label fx:id="label1" layoutX="132.0" layoutY="208.0" text="Welcome to" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="96.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" layoutX="698.0" layoutY="208.0" text="EasyTravel" textFill="#ffca00">
+         <font>
+            <Font name="System Bold" size="96.0" />
+         </font>
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

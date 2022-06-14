@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.LeftPanel">
+   <children>
+      <Label layoutX="32.0" layoutY="38.0" style="-fx-text-fill: #555555;" text="Easy Travel">
+         <font>
+            <Font name="Salsa-Regular" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="120.0" style="-fx-text-fill: #AAAAAA;" text="Main menu">
+         <font>
+            <Font name="Inder" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="368.0" style="-fx-text-fill: #AAAAAA;" text="Secondary">
+         <font>
+            <Font name="Inder" size="22.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER_LEFT" layoutX="33.0" layoutY="149.0" prefHeight="190.0" prefWidth="181.0" spacing="30.0">
+         <children>
+            <HBox onMouseClicked="#explore" prefHeight="32.0" prefWidth="148.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/compass.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="exploreLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="106.0" style="-fx-text-fill: #FF9212;" text="Explore">
+                     <font>
+                        <Font name="Inder" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets right="40.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox onMouseClicked="#category" prefHeight="32.0" prefWidth="138.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="34.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/divercity.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="categoryLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="109.0" style="-fx-text-fill: #888888;" text="Category">
+                     <font>
+                        <Font name="Inder" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox onMouseClicked="#savedPlace" prefHeight="6.0" prefWidth="168.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/bookmark.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="savedPlaceLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="119.0" style="-fx-text-fill: #888888;" text="Saved Place">
+                     <font>
+                        <Font name="Inder" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets right="5.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="33.0" layoutY="397.0" prefHeight="190.0" prefWidth="181.0" spacing="30.0">
+         <children>
+            <HBox onMouseClicked="#account" prefHeight="6.0" prefWidth="168.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/user.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="accountLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="106.0" style="-fx-text-fill: #888888;" text="Account">
+                     <font>
+                        <Font name="Inder" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets right="40.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox onMouseClicked="#payment" prefHeight="6.0" prefWidth="168.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="34.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/card.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="paymentLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="115.0" style="-fx-text-fill: #888888;" text="Payment">
+                     <font>
+                        <Font name="Inder" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets right="35.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox onMouseClicked="#setting" prefHeight="6.0" prefWidth="168.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/setting.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="settingLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="119.0" style="-fx-text-fill: #888888;" text="Setting">
+                     <font>
+                        <Font name="Inder" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets right="45.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox layoutX="32.0" layoutY="615.0" onMouseClicked="#close" prefHeight="43.0" prefWidth="126.0" spacing="23.0">
+         <children>
+            <ImageView fitHeight="48.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Icons/exit.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="exitLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="113.0" style="-fx-text-fill: #888888;" text="EXIT">
+               <font>
+                  <Font name="Inder" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+      <Label fx:id="scroll" layoutX="19.0" layoutY="164.0" prefHeight="35.0" prefWidth="10.0" style="-fx-background-color: #FF9212; -fx-background-radius: 10;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.TopPanel">
+   <children>
+      <Label layoutX="21.0" layoutY="37.0" style="-fx-text-fill: #555555;" text="Explore">
+         <font>
+            <Font name="Salsa-Regular" size="32.0" />
+         </font>
+      </Label>
+      <TextField focusTraversable="false" layoutX="390.0" layoutY="37.0" prefHeight="40.0" prefWidth="358.0" promptText="Search destinations" style="-fx-background-color: white; -fx-background-radius: 0 12 12 0; -fx-border-style: solid; -fx-border-radius: 0 12 12 0; -fx-border-color: #DDDDDD; -fx-border-width: 1 1 1 0;">
+         <font>
+            <Font name="Inter Regular" size="16.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="350.0" layoutY="37.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 12 0 0 12; -fx-border-style: solid; -fx-border-color: #DDDDDD; -fx-border-width: 1 0 1 1; -fx-border-radius: 12 0 0 12; -fx-background-color: white;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Icons/search.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+   </children>
+</AnchorPane>
