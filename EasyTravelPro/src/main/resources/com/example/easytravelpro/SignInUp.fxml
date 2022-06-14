@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.SignInUp">
    <children>
       <ImageView fx:id="beachPicture" fitHeight="500.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
@@ -62,10 +61,49 @@
             <Insets top="30.0" />
          </padding>
       </VBox>
-      <ImageView fitHeight="500.0" fitWidth="432.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="roomPicture" fitHeight="500.0" fitWidth="432.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@SignPhotos/hotelRoom.jpg" />
          </image>
       </ImageView>
+      <VBox fx:id="signInPage" alignment="TOP_CENTER" layoutX="400.0" prefHeight="500.0" prefWidth="400.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="81.0" prefWidth="375.0" text="Sign In to EasyTravel" textFill="#ff9212">
+               <font>
+                  <Font name="Corbel Bold" size="40.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="275.0" prefWidth="400.0" spacing="25.0">
+               <children>
+                  <TextField prefHeight="0.0" prefWidth="408.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Label fx:id="newUser" alignment="CENTER" onMouseEntered="#changeColorEnter" onMouseExited="#changeColorExit" prefHeight="27.0" prefWidth="296.0" style="-fx-text-fill: #1247b2;" text="Are you new User?" textFill="#1247b2">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="70.0" right="70.0" />
+               </padding>
+            </VBox>
+            <Label fx:id="siBtn" alignment="CENTER" onMouseEntered="#changeColorEntered" onMouseExited="#changeColorExited" onMousePressed="#changeColorPressed" onMouseReleased="#changeColorReleased" prefHeight="50.0" prefWidth="131.0" style="-fx-background-color: #FF9212; -fx-background-radius: 50;" text="Sign In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>
