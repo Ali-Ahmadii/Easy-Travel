@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="680.0" prefWidth="337.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane prefHeight="680.0" prefWidth="337.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.RightPanel">
+   <children>
+      <ImageView fx:id="profile" fitHeight="65.0" fitWidth="65.0" layoutX="10.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Icons/user.png" />
+         </image></ImageView>
+      <Label fx:id="fullName" layoutX="73.0" layoutY="25.0" prefHeight="14.0" prefWidth="250.0" textFill="#4d4d4d">
+         <font>
+            <Font name="Inter Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="email" layoutX="73.0" layoutY="53.0" prefHeight="20.0" prefWidth="250.0" textFill="#656565">
+         <font>
+            <Font name="Inter Regular" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1320.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 30; -fx-border-color: #FF9212; -fx-border-width: 3; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.FrameController">
    <children>
@@ -8,5 +10,10 @@
       <AnchorPane fx:id="topPanel" layoutX="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="764.0" />
       <AnchorPane fx:id="rightPanel" layoutX="984.0" prefHeight="680.0" prefWidth="337.0" />
       <AnchorPane fx:id="mainPanel" layoutX="227.0" layoutY="90.0" prefHeight="598.0" prefWidth="764.0" />
+      <Button fx:id="startBtn" layoutX="1117.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToLoginPage" opacity="0.0" style="-fx-background-color: #FF9212; -fx-text-fill: white; -fx-background-radius: 20 0 20 20;" text="Go to Login Page" visible="false">
+         <font>
+            <Font name="Salsa-Regular" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

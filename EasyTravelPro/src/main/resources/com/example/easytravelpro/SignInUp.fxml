@@ -1,72 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.SignInUp">
+<AnchorPane layoutX="255.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.SignInUp">
    <children>
-      <ImageView fx:id="beachPicture" fitHeight="500.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="beachPicture" fitHeight="500.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@SignPhotos/beach.jpg" />
          </image>
       </ImageView>
-      <VBox fx:id="signUpPage" alignment="TOP_CENTER" prefHeight="500.0" prefWidth="400.0" spacing="35.0" visible="false">
+      <VBox fx:id="signUpPage" alignment="TOP_CENTER" prefHeight="500.0" prefWidth="400.0" spacing="30.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="81.0" prefWidth="375.0" text="Create Account" textFill="#ff9212">
                <font>
                   <Font name="Corbel Bold" size="48.0" />
                </font>
             </Label>
+            <HBox prefHeight="0.0" prefWidth="400.0">
+               <children>
+                  <ChoiceBox fx:id="userType" prefHeight="25.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ChoiceBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
                <children>
-                  <TextField prefHeight="0.0" prefWidth="408.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </TextField>
-                  <TextField prefHeight="0.0" prefWidth="408.0" promptText="Email" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </TextField>
-                  <PasswordField promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </PasswordField>
-                  <Label fx:id="alreadyLogged" alignment="CENTER" onMouseEntered="#changeColorEnter" onMouseExited="#changeColorExit" prefHeight="27.0" prefWidth="296.0" style="-fx-text-fill: #1247b2;" text="Do you have an account?" textFill="#1247b2">
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <TextField fx:id="usernameSu" focusTraversable="false" prefHeight="42.0" prefWidth="264.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField fx:id="passwordSu" focusTraversable="false" prefHeight="42.0" prefWidth="266.0" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <TextField fx:id="fullName" focusTraversable="false" prefHeight="0.0" prefWidth="408.0" promptText="Full name" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="location" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="408.0" promptText="Location" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <TextField fx:id="phoneNumber" focusTraversable="false" prefHeight="0.0" prefWidth="408.0" promptText="Phone number" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="email" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="408.0" promptText="Email" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Label fx:id="alreadyLogged" alignment="CENTER" onMouseClicked="#signUpClicked" onMouseEntered="#changeColorEnter" onMouseExited="#changeColorExit" prefHeight="27.0" prefWidth="296.0" style="-fx-text-fill: #1247b2;" text="Do you have an account?" textFill="#1247b2">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
                </children>
                <padding>
-                  <Insets left="70.0" right="70.0" />
+                  <Insets left="20.0" right="20.0" />
                </padding>
             </VBox>
-            <Label fx:id="suBtn" alignment="CENTER" onMouseEntered="#changeColorEntered" onMouseExited="#changeColorExited" onMousePressed="#changeColorPressed" onMouseReleased="#changeColorReleased" prefHeight="50.0" prefWidth="131.0" style="-fx-background-color: #FF9212; -fx-background-radius: 50;" text="Sign Up" textFill="WHITE">
+            <Button fx:id="suBtn" mnemonicParsing="false" onAction="#signUp" onMouseEntered="#changeColorEntered" onMouseExited="#changeColorExited" onMousePressed="#changeColorPressed" onMouseReleased="#changeColorReleased" style="-fx-background-color: #FF9212; -fx-background-radius: 50;" text="Sign Up" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
-            </Label>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
          <padding>
-            <Insets top="30.0" />
+            <Insets top="20.0" />
          </padding>
       </VBox>
-      <ImageView fx:id="roomPicture" fitHeight="500.0" fitWidth="432.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="roomPicture" fitHeight="500.0" fitWidth="432.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@SignPhotos/hotelRoom.jpg" />
          </image>
       </ImageView>
-      <VBox fx:id="signInPage" alignment="TOP_CENTER" layoutX="400.0" prefHeight="500.0" prefWidth="400.0" spacing="10.0">
+      <Button layoutX="10.0" layoutY="440.0" mnemonicParsing="false" onAction="#backButton" prefHeight="27.0" prefWidth="36.0" style="-fx-background-color: #f5f5f5;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Icons/nextLeft.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <VBox fx:id="signInPage" alignment="TOP_CENTER" layoutX="400.0" opacity="0.0" prefHeight="500.0" prefWidth="400.0" spacing="10.0" visible="false">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="81.0" prefWidth="375.0" text="Sign In to EasyTravel" textFill="#ff9212">
                <font>
@@ -75,17 +132,17 @@
             </Label>
             <VBox alignment="CENTER" prefHeight="275.0" prefWidth="400.0" spacing="25.0">
                <children>
-                  <TextField prefHeight="0.0" prefWidth="408.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                  <TextField fx:id="usernameSi" focusTraversable="false" prefHeight="0.0" prefWidth="408.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <PasswordField promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
+                  <PasswordField fx:id="passwordSi" focusTraversable="false" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 3 0;">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </PasswordField>
-                  <Label fx:id="newUser" alignment="CENTER" onMouseEntered="#changeColorEnter" onMouseExited="#changeColorExit" prefHeight="27.0" prefWidth="296.0" style="-fx-text-fill: #1247b2;" text="Are you new User?" textFill="#1247b2">
+                  <Label fx:id="newUser" alignment="CENTER" focusTraversable="false" onMouseClicked="#signInClicked" onMouseEntered="#changeColorEnter" onMouseExited="#changeColorExit" prefHeight="27.0" prefWidth="296.0" style="-fx-text-fill: #1247b2;" text="Are you new User?" textFill="#1247b2">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -95,11 +152,11 @@
                   <Insets left="70.0" right="70.0" />
                </padding>
             </VBox>
-            <Label fx:id="siBtn" alignment="CENTER" onMouseEntered="#changeColorEntered" onMouseExited="#changeColorExited" onMousePressed="#changeColorPressed" onMouseReleased="#changeColorReleased" prefHeight="50.0" prefWidth="131.0" style="-fx-background-color: #FF9212; -fx-background-radius: 50;" text="Sign In" textFill="WHITE">
+            <Button fx:id="siBtn" layoutX="255.0" layoutY="100.0" mnemonicParsing="false" onAction="#signIn" onMouseEntered="#changeColorEntered" onMouseExited="#changeColorExited" onMousePressed="#changeColorPressed" onMouseReleased="#changeColorReleased" style="-fx-background-color: #FF9212; -fx-background-radius: 50;" text="Sign In" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
-            </Label>
+            </Button>
          </children>
          <padding>
             <Insets top="30.0" />

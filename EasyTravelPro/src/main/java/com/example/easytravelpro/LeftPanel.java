@@ -1,55 +1,83 @@
 package com.example.easytravelpro;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
-public class LeftPanel {
+import java.io.IOException;
 
+public class LeftPanel {
     String activeColor = "#FF9212;";
     String deActiveColor = "#888888;";
     int animationDuration = 800;
     @FXML
     private Label exploreLabel, categoryLabel, savedPlaceLabel,
-            accountLabel, paymentLabel, settingLabel, exitLabel, scroll;
+            accountLabel, paymentLabel, settingLabel,
+            exitLabel, scroll;
 
+    ActionEvent event;
 
-    public void explore() {
-        setActive(1);
-        Animation.scroll(scroll, animationDuration, 154);
-
+    public void explore() throws IOException {
+        if (SignInUp.enteredToApp) {
+            setActive(1);
+            Animation.scroll(scroll, animationDuration, 0);
+        } else
+            Method.notification(Alert.AlertType.INFORMATION, "Account",
+                    "You haven't logged in",
+                    "to use our Application you must Sign up/in first");
     }
 
     public void category() {
-        setActive(2);
-        Animation.scroll(scroll, animationDuration, 217);
-
+        if (SignInUp.enteredToApp) {
+            setActive(2);
+            Animation.scroll(scroll, animationDuration, 63);
+        } else
+            Method.notification(Alert.AlertType.INFORMATION, "Account",
+                    "You haven't logged in",
+                    "to use our Application you must Sign up/in first");
     }
 
     public void savedPlace() {
-        setActive(3);
-        Animation.scroll(scroll, animationDuration, 280);
-
+        if (SignInUp.enteredToApp) {
+            setActive(3);
+            Animation.scroll(scroll, animationDuration, 126);
+        } else
+            Method.notification(Alert.AlertType.INFORMATION, "Account",
+                    "You haven't logged in",
+                    "to use our Application you must Sign up/in first");
     }
 
 
     public void account() {
-        setActive(4);
-        Animation.scroll(scroll, animationDuration, 405);
-
+        if (SignInUp.enteredToApp) {
+            setActive(4);
+            Animation.scroll(scroll, animationDuration, 251);
+        } else
+            Method.notification(Alert.AlertType.INFORMATION, "Account",
+                    "You haven't logged in",
+                    "to use our Application you must Sign up/in first");
     }
 
     public void payment() {
-        setActive(5);
-        Animation.scroll(scroll, animationDuration, 465);
-
+        if (SignInUp.enteredToApp) {
+            setActive(5);
+            Animation.scroll(scroll, animationDuration, 311);
+        } else
+            Method.notification(Alert.AlertType.INFORMATION, "Account",
+                    "You haven't logged in",
+                    "to use our Application you must Sign up/in first");
     }
 
     public void setting() {
-        setActive(6);
-        Animation.scroll(scroll, animationDuration, 525);
-
+        if (SignInUp.enteredToApp) {
+            setActive(6);
+            Animation.scroll(scroll, animationDuration, 371);
+        } else
+            Method.notification(Alert.AlertType.INFORMATION, "Account",
+                    "You haven't logged in",
+                    "to use our Application you must Sign up/in first");
     }
 
     public void close() {
@@ -65,12 +93,30 @@ public class LeftPanel {
     public void setActive(int flag) {
         setGray();
         switch (flag) {
-            case 1 -> exploreLabel.setStyle("-fx-text-fill: " + activeColor);
-            case 2 -> categoryLabel.setStyle("-fx-text-fill: " + activeColor);
-            case 3 -> savedPlaceLabel.setStyle("-fx-text-fill: " + activeColor);
-            case 4 -> accountLabel.setStyle("-fx-text-fill: " + activeColor);
-            case 5 -> paymentLabel.setStyle("-fx-text-fill: " + activeColor);
-            case 6 -> settingLabel.setStyle("-fx-text-fill: " + activeColor);
+            case 1 -> {
+                MainPanel.explorePage.setVisible(true);
+                exploreLabel.setStyle("-fx-text-fill: " + activeColor);
+            }
+            case 2 -> {
+                MainPanel.categoryPage.setVisible(true);
+                categoryLabel.setStyle("-fx-text-fill: " + activeColor);
+            }
+            case 3 -> {
+                MainPanel.savedPlacePage.setVisible(true);
+                savedPlaceLabel.setStyle("-fx-text-fill: " + activeColor);
+            }
+            case 4 -> {
+                MainPanel.accountPage.setVisible(true);
+                accountLabel.setStyle("-fx-text-fill: " + activeColor);
+            }
+            case 5 -> {
+                MainPanel.paymentPage.setVisible(true);
+                paymentLabel.setStyle("-fx-text-fill: " + activeColor);
+            }
+            case 6 -> {
+                MainPanel.settingPage.setVisible(true);
+                settingLabel.setStyle("-fx-text-fill: " + activeColor);
+            }
         }
     }
 
@@ -81,26 +127,12 @@ public class LeftPanel {
         accountLabel.setStyle("-fx-text-fill: " + deActiveColor);
         paymentLabel.setStyle("-fx-text-fill: " + deActiveColor);
         settingLabel.setStyle("-fx-text-fill: " + deActiveColor);
+
+        MainPanel.explorePage.setVisible(false);
+        MainPanel.categoryPage.setVisible(false);
+        MainPanel.savedPlacePage.setVisible(false);
+        MainPanel.accountPage.setVisible(false);
+        MainPanel.paymentPage.setVisible(false);
+        MainPanel.settingPage.setVisible(false);
     }
 }
-
-/*
-    @FXML
-    private Button btn;
-
-    public void changeColorEntered() {
-        btn.setStyle("-fx-background-activeColor: #79EAFD;");
-    }
-
-    public void changeColorExited() {
-        btn.setStyle("-fx-background-activeColor: #3CD4ED;");
-    }
-
-    public void changeColorPressed() {
-        btn.setStyle("-fx-background-activeColor: #0CA2BB;");
-    }
-
-    public void changeColorReleased() {
-        btn.setStyle("-fx-background-activeColor: #79EAFD;");
-    }
-*/
