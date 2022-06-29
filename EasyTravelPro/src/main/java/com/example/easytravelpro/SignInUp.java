@@ -59,6 +59,8 @@ public class SignInUp implements Initializable {
 
     static ArrayList<Passenger> passengers = new ArrayList<>();
     static int i = 0;
+    static ArrayList<Hotelier> hoteliers = new ArrayList<>();
+    static int j = 0;
 
     public void signUp(ActionEvent event) throws IOException {
         if (Method.searchEmptyField(textFields) && !(passwordSu.getText().equals(""))) {
@@ -68,22 +70,27 @@ public class SignInUp implements Initializable {
             locationField = location.getText();
             phoneNumberField = phoneNumber.getText();
             emailField = email.getText();
+
             if (currentUserType.equals(userTypeList[0])) {
                 passengers.add(new Passenger(usernameSuField, passwordSuField,
-                        fullNameField, locationField, phoneNumberField, emailField));
+                        fullNameField, locationField, phoneNumberField, emailField, 0));
                 i++;
+                enteredToApp = true;
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
+                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                scene.setFill(Color.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
             } else {
-                Hotelier hotelier = new Hotelier();
+                hoteliers.add(new Hotelier(usernameSuField, passwordSuField,
+                        fullNameField, locationField, phoneNumberField, emailField));
+                j++;
             }
-            enteredToApp = true;
+
             Method.notification(Alert.AlertType.INFORMATION, "Welcome",
                     "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            scene.setFill(Color.TRANSPARENT);
-            stage.setScene(scene);
-            stage.show();
+
         } else
             Method.notification(Alert.AlertType.ERROR, "Error!",
                     "Some fields are Empty", "Please fill all fields");
