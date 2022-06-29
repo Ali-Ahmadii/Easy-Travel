@@ -60,6 +60,7 @@ public class SignInUp implements Initializable {
 
     public void userChoice(ActionEvent event) {
         currentUserType = userType.getValue();
+        System.out.println("HEYYY");
     }
 
     static ArrayList<Passenger> passengers = new ArrayList<>();
@@ -77,9 +78,12 @@ public class SignInUp implements Initializable {
                 passengers.add(new Passenger(usernameSuField, passwordSuField, fullNameField, locationField, phoneNumberField, emailField,0));
                 Connection con=DriverManager.getConnection(DB_URL,USER,PASS);
                 PreparedStatement pst = con.prepareStatement("SELECT * FROM passengers WHERE UserName = " +"'"+ usernameSuField+"';");
+                PreparedStatement pstq = con.prepareStatement("SELECT * FROM hotel WHERE UserName = " +"'"+ usernameSuField+"';");
                 ResultSet rs = pst.executeQuery();
+                ResultSet rsq = pstq.executeQuery();
                 boolean x = rs.next();
-                if(!(x)) {
+                boolean y = rsq.next();
+                if(!(x) && !(y)) {
                     PreparedStatement insertme = con.prepareStatement("INSERT INTO passengers (UserName,FullName,Location,PhoneNumber,Email,Password,Balance) VALUES" + "('" + usernameSuField + "','" + fullNameField + "','" + locationField + "','" + phoneNumberField + "','" + emailField + "','" + passwordSuField + "','" +String.valueOf(0)+"')");
                     insertme.execute();
                     con.close();
@@ -93,7 +97,7 @@ public class SignInUp implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                 }
-                if(x){
+                if(x || y){
                     Method.notification(Alert.AlertType.ERROR, "Error!",
                             "Unavailable Username", "Please Choose Another Username");
                     con.close();
@@ -132,8 +136,61 @@ public class SignInUp implements Initializable {
             Method.notification(Alert.AlertType.ERROR, "Error!", "Some fields are Empty", "Please fill all fields");
     }
 
-    public void signIn(ActionEvent event) throws IOException {
-
+    public void signIn(ActionEvent event) throws IOException, SQLException {
+        Connection con=DriverManager.getConnection(DB_URL,USER,PASS);
+        PreparedStatement pst = con.prepareStatement("SELECT * FROM hotel WHERE UserName = " +"'"+ usernameSi.getText()+"';");
+        PreparedStatement hst = con.prepareStatement("SELECT * FROM passengers WHERE UserName = " +"'"+ usernameSi.getText()+"';");
+        ResultSet rs = pst.executeQuery();
+        ResultSet rq = hst.executeQuery();
+        boolean hotelierbool = rs.next();
+        boolean passengerbool = rq.next();
+        boolean adminbool = false;
+        if(usernameSi.getText().equals("admin") && passwordSi.getText().equals("admin")){
+            System.out.println("admin has entered");
+            adminbool = true;
+        }
+        System.out.println(rs);
+        System.out.println(rq);
+        if(hotelierbool){
+            PreparedStatement hotelstate = con.prepareStatement("SELECT Password FROM hotel WHERE UserName = " +"'"+ usernameSi.getText()+"';");
+            ResultSet hotelierpass = hotelstate.executeQuery();
+            hotelierpass.next();
+                if (passwordSi.getText().equals(hotelierpass.getString(1))) {
+                    //Move to hotelier page
+                    System.out.println("True Pass For Hotelier");
+                }
+                else{
+                    Method.notification(Alert.AlertType.ERROR, "Error!", "Wrong UserName Or Password", "Please Re Write Your Account Information");
+                }
+        }
+        if(passengerbool){
+            PreparedStatement passengerstate = con.prepareStatement("SELECT Password FROM passengers WHERE UserName = " +"'"+ usernameSi.getText()+"';");
+            ResultSet pss = passengerstate.executeQuery();
+            pss.next();
+            if(passwordSi.getText().equals(pss.getString(1))){
+                //Move to passenger page
+                System.out.println("True Pass For Passenger");
+                enteredToApp = true;
+                Method.notification(Alert.AlertType.INFORMATION, "Welcome", "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
+                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                scene.setFill(Color.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
+            }
+            else{
+                Method.notification(Alert.AlertType.ERROR, "Error!", "Wrong UserName Or Password", "Please Re Write Your Account Information");
+            }
+        }
+        if(adminbool){
+            //Move To Admin Page
+            System.out.println("Hello Admin");
+        }
+        if((!(hotelierbool || passengerbool || adminbool))){
+            Method.notification(Alert.AlertType.ERROR, "Error!", "Wrong UserName Or Password", "Please Re Write Your Account Information");
+        }
+        con.close();
     }
 
 
