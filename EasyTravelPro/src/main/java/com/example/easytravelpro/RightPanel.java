@@ -22,7 +22,7 @@ public class RightPanel implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), e -> {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), e -> {
             if (SignInUp.enteredToApp) {
                 fullName.setText(SignInUp.passengers.get(SignInUp.i - 1).getFullName());
                 email.setText(SignInUp.passengers.get(SignInUp.i - 1).getEmail());

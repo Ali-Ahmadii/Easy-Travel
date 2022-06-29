@@ -17,8 +17,13 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.sql.*;
 
 public class SignInUp implements Initializable {
+
+    static final String DB_URL = "jdbc:mysql://localhost:3306/easy_travel";
+    static final String USER = "root";
+    static final String PASS = "integral4560sini";
 
     @FXML
     private TextField usernameSu, usernameSi, fullName, location, phoneNumber, email;
@@ -59,10 +64,8 @@ public class SignInUp implements Initializable {
 
     static ArrayList<Passenger> passengers = new ArrayList<>();
     static int i = 0;
-    static ArrayList<Hotelier> hoteliers = new ArrayList<>();
-    static int j = 0;
 
-    public void signUp(ActionEvent event) throws IOException {
+    public void signUp(ActionEvent event) throws IOException, SQLException {
         if (Method.searchEmptyField(textFields) && !(passwordSu.getText().equals(""))) {
             usernameSuField = usernameSu.getText();
             passwordSuField = passwordSu.getText();
@@ -70,30 +73,63 @@ public class SignInUp implements Initializable {
             locationField = location.getText();
             phoneNumberField = phoneNumber.getText();
             emailField = email.getText();
-
             if (currentUserType.equals(userTypeList[0])) {
-                passengers.add(new Passenger(usernameSuField, passwordSuField,
-                        fullNameField, locationField, phoneNumberField, emailField, 0));
-                i++;
-                enteredToApp = true;
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
-                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-                Scene scene = new Scene(root);
-                scene.setFill(Color.TRANSPARENT);
-                stage.setScene(scene);
-                stage.show();
+                passengers.add(new Passenger(usernameSuField, passwordSuField, fullNameField, locationField, phoneNumberField, emailField,0));
+                Connection con=DriverManager.getConnection(DB_URL,USER,PASS);
+                PreparedStatement pst = con.prepareStatement("SELECT * FROM passengers WHERE UserName = " +"'"+ usernameSuField+"';");
+                ResultSet rs = pst.executeQuery();
+                boolean x = rs.next();
+                if(!(x)) {
+                    PreparedStatement insertme = con.prepareStatement("INSERT INTO passengers (UserName,FullName,Location,PhoneNumber,Email,Password,Balance) VALUES" + "('" + usernameSuField + "','" + fullNameField + "','" + locationField + "','" + phoneNumberField + "','" + emailField + "','" + passwordSuField + "','" +String.valueOf(0)+"')");
+                    insertme.execute();
+                    con.close();
+                    i++;
+                    enteredToApp = true;
+                    Method.notification(Alert.AlertType.INFORMATION, "Welcome", "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
+                    Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    scene.setFill(Color.TRANSPARENT);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+                if(x){
+                    Method.notification(Alert.AlertType.ERROR, "Error!",
+                            "Unavailable Username", "Please Choose Another Username");
+                    con.close();
+                }
             } else {
-                hoteliers.add(new Hotelier(usernameSuField, passwordSuField,
-                        fullNameField, locationField, phoneNumberField, emailField));
-                j++;
+                Hotelier hotelier = new Hotelier(usernameSuField, passwordSuField, fullNameField, locationField, phoneNumberField, emailField);
+                Connection con=DriverManager.getConnection(DB_URL,USER,PASS);
+                PreparedStatement pst = con.prepareStatement("SELECT * FROM hotel WHERE UserName = " +"'"+ usernameSuField+"';");
+                PreparedStatement hst = con.prepareStatement("SELECT * FROM passengers WHERE UserName = " +"'"+ usernameSuField+"';");
+                ResultSet rs = pst.executeQuery();
+                ResultSet rq = hst.executeQuery();
+                boolean x = rs.next();
+                boolean y = rq.next();
+                if(!(x) && !(y)) {
+                    PreparedStatement insertme = con.prepareStatement("INSERT INTO hotel (UserName,HotelName,Location,PhoneNumber,Email,Password) VALUES" + "('" + usernameSuField + "','" + fullNameField + "','" + locationField + "','" + phoneNumberField + "','" + emailField + "','" + passwordSuField + "')");
+                    insertme.execute();
+                    con.close();
+                    i++;
+                    enteredToApp = true;
+                    Method.notification(Alert.AlertType.INFORMATION, "Welcome",
+                            "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
+                    Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    scene.setFill(Color.TRANSPARENT);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+                if(x || y){
+                    Method.notification(Alert.AlertType.ERROR, "Error!",
+                            "Unavailable Username", "Please Choose Another Username");
+                    con.close();
+                }
             }
-
-            Method.notification(Alert.AlertType.INFORMATION, "Welcome",
-                    "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
-
         } else
-            Method.notification(Alert.AlertType.ERROR, "Error!",
-                    "Some fields are Empty", "Please fill all fields");
+            Method.notification(Alert.AlertType.ERROR, "Error!", "Some fields are Empty", "Please fill all fields");
     }
 
     public void signIn(ActionEvent event) throws IOException {
