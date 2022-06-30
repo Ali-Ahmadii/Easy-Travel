@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.RoomCompoController">
+   <children>
+      <ImageView fitHeight="125.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Rooms/room1.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="location" alignment="CENTER_RIGHT" layoutX="74.0" layoutY="126.0" prefHeight="18.0" prefWidth="105.0" text="Tehran">
+         <font>
+            <Font name="Inter Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="capacity" layoutX="1.0" layoutY="126.0" prefHeight="18.0" prefWidth="71.0" text="for 3 N">
+         <font>
+            <Font name="Inter Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="hotelName" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="144.0" prefHeight="30.0" prefWidth="165.0" text="SpinasPlus">
+         <font>
+            <Font name="Salsa-Regular" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="rentBtn" layoutX="9.0" layoutY="179.0" mnemonicParsing="false" onAction="#rent" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #FF9212;" text="\$399" textFill="#ff9212">
+         <font>
+            <Font name="Inter Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <HBox alignment="CENTER" layoutY="216.0" prefHeight="33.0" prefWidth="179.0" spacing="16.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#call" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/call.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#comment" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="33.0" onDragDetected="#info" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/info.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/bookmark.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#comment" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/comment.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="-10.0" />
+   </padding>
+</AnchorPane>

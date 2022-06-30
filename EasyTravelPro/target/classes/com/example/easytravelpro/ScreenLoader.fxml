@@ -5,11 +5,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1320.0" style="-fx-background-color: #252422; -fx-background-radius: 30; -fx-border-style: solid; -fx-border-color: #ffca00; -fx-border-radius: 30; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.ScreenLoader">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1320.0" style="-fx-background-color: #1B1B1D; -fx-background-radius: 30; -fx-border-style: solid; -fx-border-color: #ffca00; -fx-border-radius: 30; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.ScreenLoader">
    <children>
+      <ImageView fitHeight="657.0" fitWidth="1244.0" layoutX="59.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../firefly.gif" />
+         </image>
+      </ImageView>
       <ProgressBar fx:id="bar" layoutX="202.0" layoutY="563.0" prefHeight="26.0" prefWidth="896.0" progress="0.0" />
       <Button fx:id="btn" layoutX="526.0" layoutY="407.0" mnemonicParsing="false" onAction="#enter" style="-fx-background-color: #252422; -fx-background-radius: 15; -fx-border-style: solid; -fx-border-color: white; -fx-border-width: 3; -fx-border-radius: 10;" text="Enter to App" textFill="WHITE" visible="false">
          <font>

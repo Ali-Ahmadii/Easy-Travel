@@ -3,12 +3,11 @@ package com.example.easytravelpro;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Method {
 
@@ -18,6 +17,22 @@ public class Method {
         alert.setHeaderText(header);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public static String inputNotification() {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Hotel Name");
+        dialog.setHeaderText("what is your Hotel Name?");
+        dialog.setContentText("Please Enter Your Hotel Name: ");
+        Optional<String> hotelName = dialog.showAndWait();
+        String name = "";
+        if (hotelName.isPresent()) {
+            name = hotelName.get();
+        }
+        if (name.equals("")) {
+            name = inputNotification();
+        }
+        return name;
     }
 
     public static long random(long min, long max) {
@@ -60,7 +75,7 @@ public class Method {
         boolean isEmpty = false;
         for (int i = 0; i < textFields.size(); i++) {
             isEmpty = textFields.get(i).getText().equals("");
-            if (isEmpty){
+            if (isEmpty) {
                 break;
             }
         }

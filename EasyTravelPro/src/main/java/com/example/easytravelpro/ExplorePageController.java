@@ -5,7 +5,7 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -15,6 +15,8 @@ public class ExplorePageController implements Initializable {
 
     @FXML
     private Label villaLabel, tentLabel;
+    @FXML
+    private HBox roomBox;
     int flag = 0;
 
     public void activePics() {

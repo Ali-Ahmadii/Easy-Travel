@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
 <AnchorPane fx:id="mainPanel" prefHeight="598.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.ExplorePageController">
    <children>
@@ -24,7 +27,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label fx:id="villaLabel" layoutX="32.0" layoutY="15.0" onMouseClicked="#activePics" prefHeight="300.0" prefWidth="700.0">
+      <Label fx:id="villaLabel" layoutX="32.0" layoutY="1.0" onMouseClicked="#activePics" prefHeight="300.0" prefWidth="700.0">
          <graphic>
             <ImageView fitHeight="300.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -33,7 +36,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="tentLabel" layoutX="32.0" layoutY="15.0" opacity="0.0" prefHeight="300.0" prefWidth="700.0" visible="false">
+      <Label fx:id="tentLabel" layoutX="32.0" layoutY="1.0" opacity="0.0" prefHeight="300.0" prefWidth="700.0" visible="false">
          <graphic>
             <ImageView fitHeight="300.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -42,5 +45,17 @@
             </ImageView>
          </graphic>
       </Label>
+      <ScrollPane layoutX="28.0" layoutY="311.0" prefHeight="264.0" prefWidth="709.0">
+         <content>
+            <HBox fx:id="roomBox" alignment="CENTER_LEFT" prefHeight="250.0" prefWidth="707.0" spacing="13.0">
+               <padding>
+                  <Insets left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

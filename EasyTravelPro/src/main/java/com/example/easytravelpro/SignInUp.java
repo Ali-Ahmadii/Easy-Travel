@@ -71,22 +71,28 @@ public class SignInUp implements Initializable {
             phoneNumberField = phoneNumber.getText();
             emailField = email.getText();
 
+            Parent root;
+
             if (currentUserType.equals(userTypeList[0])) {
                 passengers.add(new Passenger(usernameSuField, passwordSuField,
                         fullNameField, locationField, phoneNumberField, emailField, 0));
                 i++;
                 enteredToApp = true;
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
-                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-                Scene scene = new Scene(root);
-                scene.setFill(Color.TRANSPARENT);
-                stage.setScene(scene);
-                stage.show();
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
+
             } else {
                 hoteliers.add(new Hotelier(usernameSuField, passwordSuField,
                         fullNameField, locationField, phoneNumberField, emailField));
                 j++;
+                enteredToHotelierUI = true;
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Hotelier.fxml")));
             }
+
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            scene.setFill(Color.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
 
             Method.notification(Alert.AlertType.INFORMATION, "Welcome",
                     "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
@@ -112,6 +118,7 @@ public class SignInUp implements Initializable {
     private Button suBtn, siBtn;
 
     static boolean enteredToApp = false;
+    static boolean enteredToHotelierUI = true;
 
     public void signUpClicked() {
         Method.changePagesInLoginPage(signUpPage, beachPicture, signInPage, roomPicture, 700, 400, -400);
