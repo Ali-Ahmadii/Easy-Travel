@@ -60,7 +60,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#comment" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#info" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -68,7 +68,7 @@
                   <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
                </padding>
                <graphic>
-                  <ImageView fitHeight="34.0" fitWidth="33.0" onDragDetected="#info" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="34.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Icons/info.png" />
                      </image>

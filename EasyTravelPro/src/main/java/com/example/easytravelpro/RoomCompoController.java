@@ -38,16 +38,16 @@ public class RoomCompoController implements Initializable {
         Method.notification(Alert.AlertType.INFORMATION,
                 "Contact us",
                 "Hotelier info",
-                hoteliers.get(j - 1).getFullName() + "/n" +
-                        hoteliers.get(j - 1).getPhoneNumber() + "/n" +
+                hoteliers.get(j - 1).getFullName() + "\n" +
+                        hoteliers.get(j - 1).getPhoneNumber() + "\n" +
                         hoteliers.get(j - 1).getEmail());
     }
 
     public void info(ActionEvent event) {
         Method.notification(Alert.AlertType.INFORMATION,
                 "Hotel Facility",
-                rooms.get(k).getHotelName(),
-                rooms.get(k).getFacility());
+                rooms.get(k - 1).getHotelName(),
+                rooms.get(k - 1).getFacility());
     }
 
     public void save(ActionEvent event) {

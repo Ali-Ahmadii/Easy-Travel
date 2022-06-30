@@ -1,0 +1,41 @@
+.root{
+    -fx-background-color: #fcfcfc;
+    -fx-border-color:  #ff9212
+}
+
+#startBtn {
+    -fx-background-color: #ff9212; 
+    -fx-text-fill: #ffffff;
+}
+#appNameLabel {
+    -fx-text-fill: #555555;
+}
+#mainMenu {
+    -fx-text-fill: #aaaaaa;
+}
+#secondary {
+    -fx-text-fill: #aaaaaa;
+}
+#scroll {
+    -fx-background-color: #ff9212;
+}
+#exploreLable {
+    -fx-text-fill: #555555;
+}
+#search1 {
+    -fx-border-color: #dddddd;
+    -fx-background-color : #ffffff;
+}
+#search2 {
+    -fx-border-color: #dddddd;
+    -fx-background-color : #ffffff;
+}
+#fullName {
+    -fx-text-fill: #4d4d4d;
+}
+#email {
+    -fx-text-fill: #656565;
+}
+/*------------------------
+
+

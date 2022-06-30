@@ -51,8 +51,6 @@ public class HotelierController implements Initializable {
         roomCompos.add(FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("roomComponent.fxml"))));
         roomBox.getChildren().add(roomCompos.get(k));
 
-
-
         k++;
     }
 
