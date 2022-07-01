@@ -88,9 +88,9 @@
             <Font name="Inter Bold" size="22.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="12.0" layoutY="132.0" prefHeight="263.0" prefWidth="578.0">
+      <ScrollPane layoutX="12.0" layoutY="132.0" prefHeight="272.0" prefWidth="578.0">
          <content>
-            <HBox fx:id="roomBox" alignment="CENTER_LEFT" prefHeight="250.0" prefWidth="576.0" spacing="10.0">
+            <HBox fx:id="roomBox" alignment="CENTER_LEFT" prefHeight="255.0" prefWidth="576.0" spacing="10.0">
                <padding>
                   <Insets left="10.0" right="10.0" />
                </padding>

@@ -199,7 +199,6 @@ public class SignInUp implements Initializable  {
                 System.out.println("True Pass For Passenger");
                 //AccountPageController xy = new AccountPageController("a","a","a","a","a");
                 con.close();
-                //i++;
                 Connection newconnection=DriverManager.getConnection(DB_URL,USER,PASS);
                 PreparedStatement userinfosstate = newconnection.prepareStatement("SELECT UserName FROM passengers WHERE UserName = " +"'"+ usernameSi.getText()+"';");
                 PreparedStatement fullnameinfosstate = newconnection.prepareStatement("SELECT FullName FROM passengers WHERE UserName = " +"'"+ usernameSi.getText()+"';");

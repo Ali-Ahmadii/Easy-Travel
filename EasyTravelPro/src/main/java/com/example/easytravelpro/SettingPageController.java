@@ -19,21 +19,21 @@ public class SettingPageController {
     private Button darkMode, lightMode;
 
     public void setDarkMode(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        scene.getStylesheets().add(Main.cssStyleDark);
-        scene.setFill(Color.TRANSPARENT);;
+//        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
+//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        Scene scene = new Scene(root);
+//        stage.setScene(scene);
+//        scene.getStylesheets().add(Main.cssStyleDark);
+//        scene.setFill(Color.TRANSPARENT);;
     }
 
     public void setLightMode(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        scene.getStylesheets().add(Main.cssStyleLight);
-        scene.setFill(Color.TRANSPARENT);
+//        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
+//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        Scene scene = new Scene(root);
+//        stage.setScene(scene);
+//        scene.getStylesheets().add(Main.cssStyleLight);
+//        scene.setFill(Color.TRANSPARENT);
 
     }
 }
