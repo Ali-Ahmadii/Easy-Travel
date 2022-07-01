@@ -33,6 +33,10 @@ public class FrameController implements Initializable {
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SignInUp.fxml")));
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
+
+                if (Main.isDark) scene.getStylesheets().add(Main.loginStyleDark);
+                else scene.getStylesheets().add(Main.loginStyleLight);
+
                 scene.setFill(Color.TRANSPARENT);
                 stage.setScene(scene);
                 Animation.Fade(root,400,800,0,1);

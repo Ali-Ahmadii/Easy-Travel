@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane layoutX="255.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.SignInUp">
+<AnchorPane layoutX="255.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.SignInUp">
    <children>
       <ImageView fx:id="beachPicture" fitHeight="500.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true">
          <image>

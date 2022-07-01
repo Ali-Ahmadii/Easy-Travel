@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane fx:id="mainPanel" prefHeight="598.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.CategoryPageController" />
+<AnchorPane fx:id="mainPanel" prefHeight="619.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.CategoryPageController">
+   <children>
+      <HBox layoutX="14.0" layoutY="14.0" prefHeight="593.0" prefWidth="735.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="593.0" prefWidth="245.0" spacing="20.0">
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="593.0" prefWidth="245.0" spacing="20.0">
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="255.0" layoutY="10.0" prefHeight="593.0" prefWidth="245.0">
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

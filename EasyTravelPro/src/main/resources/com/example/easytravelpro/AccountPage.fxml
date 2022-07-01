@@ -58,27 +58,27 @@
       </HBox>
       <VBox alignment="CENTER_LEFT" layoutX="9.0" layoutY="34.0" prefHeight="265.0" prefWidth="310.0" spacing="22.0">
          <children>
-            <Label text="Full Name :">
+            <Label fx:id="fn" text="Full Name :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="10.0" text="Username : ">
+            <Label fx:id="un" layoutX="10.0" layoutY="10.0" text="Username : ">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="43.0" text="Location :">
+            <Label fx:id="l" layoutX="10.0" layoutY="43.0" text="Location :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="76.0" text="Phone Number :">
+            <Label fx:id="pn" layoutX="10.0" layoutY="76.0" text="Phone Number :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="109.0" text="Email Address :">
+            <Label fx:id="ea" layoutX="10.0" layoutY="109.0" text="Email Address :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>

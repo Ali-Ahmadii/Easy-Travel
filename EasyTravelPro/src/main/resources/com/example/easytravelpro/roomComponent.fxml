@@ -45,7 +45,7 @@
       </Button>
       <HBox alignment="CENTER" layoutY="216.0" prefHeight="33.0" prefWidth="179.0" spacing="16.0">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#call" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -60,7 +60,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#info" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -75,7 +75,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -90,7 +90,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#comment" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="27.0" style="-fx-background-color: #eeeeee;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

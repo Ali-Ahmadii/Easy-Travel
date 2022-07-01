@@ -36,7 +36,6 @@ public class HotelierController implements Initializable {
     static ArrayList<AnchorPane> roomCompos = new ArrayList<>();
     static int k = 0;
 
-
     public void choosePhotoForRoom(ActionEvent event) {
 
     }
@@ -60,6 +59,10 @@ public class HotelierController implements Initializable {
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         com.example.easytravelpro.Animation.Fade(root, 400, 800, 0, 1);
+
+        if (Main.isDark) scene.getStylesheets().add(Main.loginStyleDark);
+        else scene.getStylesheets().add(Main.loginStyleLight);
+
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();

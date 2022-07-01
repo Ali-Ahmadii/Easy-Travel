@@ -3,7 +3,6 @@ package com.example.easytravelpro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -12,8 +11,6 @@ import java.util.ResourceBundle;
 
 import static com.example.easytravelpro.HotelierController.k;
 import static com.example.easytravelpro.HotelierController.rooms;
-import static com.example.easytravelpro.SignInUp.hoteliers;
-import static com.example.easytravelpro.SignInUp.j;
 
 public class RoomCompoController implements Initializable {
 
@@ -35,19 +32,19 @@ public class RoomCompoController implements Initializable {
     }
 
     public void call(ActionEvent event) {
-        Method.notification(Alert.AlertType.INFORMATION,
-                "Contact us",
-                "Hotelier info",
-                hoteliers.get(j - 1).getFullName() + "\n" +
-                        hoteliers.get(j - 1).getPhoneNumber() + "\n" +
-                        hoteliers.get(j - 1).getEmail());
+//        Method.notification(Alert.AlertType.INFORMATION,
+//                "Contact us",
+//                "Hotelier info",
+//                hoteliers.get(j - 1).getFullName() + "\n" +
+//                        hoteliers.get(j - 1).getPhoneNumber() + "\n" +
+//                        hoteliers.get(j - 1).getEmail());
     }
 
     public void info(ActionEvent event) {
-        Method.notification(Alert.AlertType.INFORMATION,
-                "Hotel Facility",
-                rooms.get(k - 1).getHotelName(),
-                rooms.get(k - 1).getFacility());
+//        Method.notification(Alert.AlertType.INFORMATION,
+//                "Hotel Facility",
+//                rooms.get(k - 1).getHotelName(),
+//                rooms.get(k - 1).getFacility());
     }
 
     public void save(ActionEvent event) {

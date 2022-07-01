@@ -25,15 +25,15 @@
       </Label>
       <ScrollPane layoutX="14.0" layoutY="90.0" prefHeight="234.0" prefWidth="478.0">
          <content>
-            <HBox fx:id="cardBox" alignment="CENTER" prefHeight="216.0" prefWidth="476.0" spacing="10.0">
-               <padding>
-                  <Insets left="10.0" right="10.0" />
-               </padding>
+            <HBox fx:id="cardBox" alignment="CENTER" prefHeight="180.0" prefWidth="457.0" spacing="10.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </HBox>
          </content>
+         <padding>
+            <Insets left="10.0" right="10.0" top="25.0" />
+         </padding>
       </ScrollPane>
       <Label layoutX="14.0" layoutY="56.0" text="Your Cards" textFill="#656363">
          <font>

@@ -16,18 +16,40 @@ public class Main extends Application {
     static String cssStyleDark;
     static String cssStyleLight;
 
-    static boolean isDark = false;
+    static String loginStyleDark;
+    static String loginStyleLight;
+
+    static String hotelierStyleDark;
+    static String hotelierStyleLight;
+
+    static boolean isDark = true;
+
     @Override
     public void start(Stage stage) throws IOException {
 
-        cssStyleDark = Objects.requireNonNull(this.getClass().getResource("DarkMode.css")).toExternalForm();
-        cssStyleLight = Objects.requireNonNull(this.getClass().getResource("LightMode.css")).toExternalForm();
+        cssStyleDark = Objects.requireNonNull(this.getClass().getResource(
+                "DarkMode.css")).toExternalForm();
+        cssStyleLight = Objects.requireNonNull(this.getClass().getResource(
+                "LightMode.css")).toExternalForm();
+
+        loginStyleDark = Objects.requireNonNull(this.getClass().getResource(
+                "DarkModeLoginPage.css")).toExternalForm();
+        loginStyleLight = Objects.requireNonNull(this.getClass().getResource(
+                "LightModeLoginPage.css")).toExternalForm();
+
+        hotelierStyleDark = Objects.requireNonNull(this.getClass().getResource(
+                "DarkModeHotelier.css")).toExternalForm();
+        hotelierStyleLight = Objects.requireNonNull(this.getClass().getResource(
+                "LightModeHotelier.css")).toExternalForm();
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Frame.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Image image = new Image("hostel.png");
         stage.getIcons().add(image);
-        scene.getStylesheets().add(Main.cssStyleLight);
+
+        if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+        else scene.getStylesheets().add(Main.cssStyleLight);
+
         stage.initStyle(StageStyle.TRANSPARENT);
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);

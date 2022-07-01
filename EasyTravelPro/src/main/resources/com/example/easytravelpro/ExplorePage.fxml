@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane fx:id="mainPanel" prefHeight="598.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.ExplorePageController">
+<AnchorPane fx:id="mainPanel" prefHeight="619.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.ExplorePageController">
    <children>
-      <Label fx:id="villaLabel" layoutX="32.0" layoutY="1.0" onMouseClicked="#activePics" prefHeight="300.0" prefWidth="700.0">
+      <Label fx:id="villaLabel" layoutX="32.0" layoutY="15.0" onMouseClicked="#activePics" prefHeight="300.0" prefWidth="700.0">
          <graphic>
             <ImageView fitHeight="300.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -19,7 +19,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="tentLabel" layoutX="32.0" layoutY="1.0" opacity="0.0" prefHeight="300.0" prefWidth="700.0" visible="false">
+      <Label fx:id="tentLabel" layoutX="32.0" layoutY="15.0" opacity="0.0" prefHeight="300.0" prefWidth="700.0" visible="false">
          <graphic>
             <ImageView fitHeight="300.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -28,9 +28,9 @@
             </ImageView>
          </graphic>
       </Label>
-      <ScrollPane layoutX="31.0" layoutY="308.0" prefHeight="271.0" prefWidth="706.0">
+      <ScrollPane fx:id="scroll" layoutX="57.0" layoutY="328.0" prefHeight="271.0" prefWidth="647.0">
          <content>
-            <HBox fx:id="roomBox" alignment="CENTER_LEFT" prefHeight="257.0" prefWidth="704.0" spacing="13.0">
+            <HBox fx:id="roomBox" alignment="CENTER_LEFT" prefHeight="250.0" prefWidth="644.0" spacing="13.0">
                <padding>
                   <Insets left="15.0" right="15.0" top="15.0" />
                </padding>

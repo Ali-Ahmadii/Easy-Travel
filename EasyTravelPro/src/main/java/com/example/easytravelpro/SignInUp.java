@@ -90,6 +90,15 @@ public class SignInUp implements Initializable {
 
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
+
+            if (currentUserType.equals(userTypeList[0])) {
+                if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+                else scene.getStylesheets().add(Main.cssStyleLight);
+            } else {
+                if (Main.isDark) scene.getStylesheets().add(Main.hotelierStyleDark);
+                else scene.getStylesheets().add(Main.hotelierStyleLight);
+            }
+
             scene.setFill(Color.TRANSPARENT);
             stage.setScene(scene);
             stage.show();
@@ -103,7 +112,14 @@ public class SignInUp implements Initializable {
     }
 
     public void signIn(ActionEvent event) throws IOException {
+        //styles must be added for mainPage -> {
 
+        /*
+        if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+        else scene.getStylesheets().add(Main.cssStyleLight);
+        */
+
+        //}
     }
 
 
@@ -174,6 +190,10 @@ public class SignInUp implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+
+        if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+        else scene.getStylesheets().add(Main.cssStyleLight);
+
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
