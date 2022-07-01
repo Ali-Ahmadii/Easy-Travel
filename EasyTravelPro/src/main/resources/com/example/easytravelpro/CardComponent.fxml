@@ -1,60 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="180.0" prefWidth="280.0" style="-fx-background-color: #212121; -fx-background-radius: 22;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.CardCompoController">
+<AnchorPane prefHeight="180.0" prefWidth="305.0" style="-fx-background-color: #212121; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.CardCompoController">
    <children>
-      <Label layoutX="14.0" layoutY="8.0" text="Credit Card" textFill="#ffcc00">
+      <Label layoutX="14.0" layoutY="16.0" text="Credit Card" textFill="#ffcc00">
          <font>
-            <Font name="Inter Bold" size="22.0" />
+            <Font name="Inter Bold" size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="73.0" fitWidth="71.0" layoutX="4.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="8.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Card/chipCard.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="111.0" fitWidth="113.0" layoutX="156.0" layoutY="-11.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="99.0" fitWidth="99.0" layoutX="189.0" layoutY="-4.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Card/masterCard.png" />
          </image>
       </ImageView>
-      <Label fx:id="cardNumber" layoutX="14.0" layoutY="87.0" prefHeight="31.0" prefWidth="263.0" text="4587  1358  1349  7456" textFill="#ffcc00">
-         <font>
-            <Font name="Inder" size="22.0" />
-         </font>
-      </Label>
-      <Label fx:id="expiry" layoutX="212.0" layoutY="145.0" text="05/04" textFill="#ffcc00">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="fullName" layoutX="14.0" layoutY="143.0" text="Parsa Chavoshi" textFill="#ffcc00">
+      <Label fx:id="cardNumber" alignment="CENTER" layoutX="3.0" layoutY="88.0" prefHeight="31.0" prefWidth="298.0" text="4587  1358  1349  7456" textFill="#81d9ff">
          <font>
             <Font name="Inder" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="ccv2" layoutX="14.0" layoutY="116.0" text="ccv2: 719" textFill="#ffcc00">
+      <Label fx:id="expiry" layoutX="239.0" layoutY="142.0" prefHeight="26.0" prefWidth="65.0" text="05/04" textFill="#ffcc00">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullName" layoutX="14.0" layoutY="144.0" text="Parsa Chavoshi" textFill="#ffcc00">
+         <font>
+            <Font name="Inder" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ccv2" layoutX="15.0" layoutY="119.0" text="ccv2: 719" textFill="#ffcc008c">
+         <font>
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
    </children>
-    <effect>
-        <Lighting diffuseConstant="1.64" specularConstant="1.29" specularExponent="35.92" surfaceScale="3.07">
-            <bumpInput>
-                <Shadow />
-            </bumpInput>
-            <light>
-            <Light.Distant />
-            </light>
-        </Lighting>
-    </effect>
 </AnchorPane>
