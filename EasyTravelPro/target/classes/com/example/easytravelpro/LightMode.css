@@ -1,0 +1,76 @@
+.root{
+    -fx-background-color: #fcfcfc;
+    -fx-border-color:  #ff9212
+}
+
+#startBtn {
+    -fx-background-color: #ff9212; 
+    -fx-text-fill: #ffffff;
+}
+#appNameLabel {
+    -fx-text-fill: #555555;
+}
+#mainMenu {
+    -fx-text-fill: #aaaaaa;
+}
+#secondary {
+    -fx-text-fill: #aaaaaa;
+}
+#scroll {
+    -fx-background-color: #ff9212;
+}
+#search1 {
+    -fx-border-color: #dddddd;
+    -fx-background-color : #ffffff;
+}
+#search2 {
+    -fx-border-color: #dddddd;
+    -fx-background-color : #ffffff;
+}
+#fullName {
+    -fx-text-fill: #4d4d4d;
+}
+#email {
+    -fx-text-fill: #656565;
+}
+/*------------------------*/
+.text-field {
+    -fx-text-fill: #202020;
+}
+.radio-button {
+    -fx-text-fill: #202020;
+}
+#accountBalance {
+    -fx-text-fill: #202020;
+}
+#fn{
+    -fx-text-fill: #202020;
+}
+#un{
+    -fx-text-fill: #202020;
+}
+#l{
+    -fx-text-fill: #202020;
+}
+#pn{
+    -fx-text-fill: #202020;
+}
+#ea{
+    -fx-text-fill: #202020;
+}
+
+#fullNameL{
+    -fx-text-fill: #202020;
+}
+#usernameL{
+    -fx-text-fill: #202020;
+}
+#locationL{
+    -fx-text-fill: #202020;
+}
+#phoneNumberL{
+    -fx-text-fill: #202020;
+}
+#emailL{
+    -fx-text-fill: #202020;
+}
