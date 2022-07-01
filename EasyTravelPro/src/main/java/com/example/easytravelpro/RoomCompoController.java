@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static com.example.easytravelpro.HotelierController.k;
@@ -16,14 +17,15 @@ import static com.example.easytravelpro.SignInUp.hoteliers;
 import static com.example.easytravelpro.SignInUp.j;
 
 public class RoomCompoController implements Initializable {
-
+//    static ArrayList<String> x = new ArrayList<>();
     @FXML
     private Label location, hotelName, capacity;
     @FXML
     private Button rentBtn;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
         location.setText(rooms.get(k).getLocation());
         hotelName.setText(rooms.get(k).getHotelName());
         rentBtn.setText("$" + rooms.get(k).getPrice());
@@ -44,10 +46,11 @@ public class RoomCompoController implements Initializable {
     }
 
     public void info(ActionEvent event) {
-        Method.notification(Alert.AlertType.INFORMATION,
-                "Hotel Facility",
-                rooms.get(k).getHotelName(),
-                rooms.get(k).getFacility());
+//        System.out.println("here");
+//        Method.notification(Alert.AlertType.INFORMATION,
+//                "Hotel Facility",
+//                rooms.get(k).getHotelName(),
+//                rooms.get(k).getFacility());
     }
 
     public void save(ActionEvent event) {

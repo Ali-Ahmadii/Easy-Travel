@@ -19,16 +19,18 @@ public class RightPanel implements Initializable {
     @FXML
     private ImageView profile;
 
-
+    static String Name;
+    static String Email;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), e -> {
+
+//        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), e -> {
             if (SignInUp.enteredToApp) {
-                fullName.setText(SignInUp.passengers.get(SignInUp.i - 1).getFullName());
-                email.setText(SignInUp.passengers.get(SignInUp.i - 1).getEmail());
+                fullName.setText(Name);
+                email.setText(Email);
             }
-        }));
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
+//        }));
+//        timeline.setCycleCount(Animation.INDEFINITE);
+//        timeline.play();
     }
 }

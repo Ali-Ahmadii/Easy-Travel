@@ -6,10 +6,18 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.util.Duration;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class Method {
+    static final String DB_URL = "jdbc:mysql://localhost:3306/easy_travel";
+    static final String USER = "root";
+    static final String PASS = "integral4560sini";
+    static String user;
 
     public static void notification(Alert.AlertType alertType, String title, String header, String message) {
         Alert alert = new Alert(alertType);
@@ -19,7 +27,7 @@ public class Method {
         alert.showAndWait();
     }
 
-    public static String inputNotification() {
+    public static String inputNotification() throws SQLException {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Hotel Name");
         dialog.setHeaderText("what is your Hotel Name?");
@@ -27,7 +35,13 @@ public class Method {
         Optional<String> hotelName = dialog.showAndWait();
         String name = "";
         if (hotelName.isPresent()) {
+            SignInUp.hotelname = hotelName.get();
             name = hotelName.get();
+//            Connection co = DriverManager.getConnection(DB_URL,USER,PASS);
+//            String p = hotelName.get();
+//            PreparedStatement st = co.prepareStatement("INSERT INTO hotel (HotelName) VALUE ('s') Where UserName = as");
+//            st.execute();
+//            co.close();
         }
         if (name.equals("")) {
             name = inputNotification();
