@@ -67,5 +67,6 @@ public class FrameController implements Initializable {
             throw new RuntimeException(e);
         }
 
+
     }
 }

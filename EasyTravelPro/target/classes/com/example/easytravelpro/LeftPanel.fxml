@@ -12,17 +12,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.LeftPanel">
    <children>
-      <Label layoutX="32.0" layoutY="38.0" style="-fx-text-fill: #555555;" text="Easy Travel">
+      <Label fx:id="appNameLabel" layoutX="32.0" layoutY="38.0" text="Easy Travel">
          <font>
             <Font name="Salsa-Regular" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="120.0" style="-fx-text-fill: #AAAAAA;" text="Main menu">
+      <Label fx:id="mainMenu" layoutX="33.0" layoutY="120.0" text="Main menu">
          <font>
             <Font name="Inder" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="36.0" layoutY="368.0" style="-fx-text-fill: #AAAAAA;" text="Secondary">
+      <Label fx:id="secondary" layoutX="36.0" layoutY="368.0" text="Secondary">
          <font>
             <Font name="Inder" size="22.0" />
          </font>
@@ -172,6 +172,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </HBox>
-      <Label fx:id="scroll" layoutX="19.0" layoutY="164.0" prefHeight="35.0" prefWidth="10.0" style="-fx-background-color: #FF9212; -fx-background-radius: 10;" />
+      <Label fx:id="scroll" layoutX="19.0" layoutY="164.0" prefHeight="35.0" prefWidth="10.0" style="-fx-background-radius: 10;" />
    </children>
 </AnchorPane>

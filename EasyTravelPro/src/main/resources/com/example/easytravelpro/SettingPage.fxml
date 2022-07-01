@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="mainPanel" prefHeight="598.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.SettingPageController" />
+<AnchorPane fx:id="mainPanel" prefHeight="598.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.SettingPageController">
+   <children>
+      <Label layoutX="121.0" layoutY="74.0" prefHeight="287.0" prefWidth="243.0" style="-fx-background-color: #444444;" />
+      <Label layoutX="409.0" layoutY="74.0" prefHeight="287.0" prefWidth="243.0" style="-fx-background-color: #DDDDDD;" />
+      <Button fx:id="darkMode" layoutX="163.0" layoutY="384.0" mnemonicParsing="false" onAction="#setDarkMode" style="-fx-background-color: black; -fx-text-fill: white;" text="Dark mode">
+         <font>
+            <Font name="Inter Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="lightMode" layoutX="449.0" layoutY="384.0" mnemonicParsing="false" onAction="#setLightMode" style="-fx-background-color: white; -fx-text-fill: black;" text="Light mode">
+         <font>
+            <Font name="Inter Bold" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
