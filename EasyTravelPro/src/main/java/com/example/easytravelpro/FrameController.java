@@ -16,6 +16,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -25,6 +26,8 @@ public class FrameController implements Initializable {
     private AnchorPane leftPanel, topPanel, rightPanel, mainPanel;
     @FXML
     private Button startBtn;
+
+
 
     public void goToLoginPage(ActionEvent event) {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.4), e -> {
@@ -50,7 +53,9 @@ public class FrameController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle){
+
+
         if (!SignInUp.enteredToApp) {
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(4), e -> {
                 startBtn.setVisible(true);
@@ -59,14 +64,14 @@ public class FrameController implements Initializable {
             Animation.Fade(startBtn, 4000, 1000, 0, 1);
         }
         try {
+            rightPanel.getChildren().add(
+                    FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("RightPanel.fxml"))));
+            topPanel.getChildren().add(
+                    FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("TopPanel.fxml"))));
             mainPanel.getChildren().add(
                     FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("MainPanel.fxml"))));
             leftPanel.getChildren().add(
                     FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("leftPanel.fxml"))));
-            topPanel.getChildren().add(
-                    FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("TopPanel.fxml"))));
-            rightPanel.getChildren().add(
-                    FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("RightPanel.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

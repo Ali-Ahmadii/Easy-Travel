@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="380.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.Admin">
+    <children>
+        <TextArea fx:id="textArea" prefHeight="380.0" prefWidth="680.0">
+            <font>
+                <Font name="Inter Regular" size="20.0" />
+            </font>
+        </TextArea>
+    </children>
+</AnchorPane>

@@ -51,6 +51,8 @@ public class ScreenLoader implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+        else scene.getStylesheets().add(Main.cssStyleLight);
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();

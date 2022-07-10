@@ -37,11 +37,6 @@ public class Method {
         if (hotelName.isPresent()) {
             SignInUp.hotelname = hotelName.get();
             name = hotelName.get();
-//            Connection co = DriverManager.getConnection(DB_URL,USER,PASS);
-//            String p = hotelName.get();
-//            PreparedStatement st = co.prepareStatement("INSERT INTO hotel (HotelName) VALUE ('s') Where UserName = as");
-//            st.execute();
-//            co.close();
         }
         if (name.equals("")) {
             name = inputNotification();

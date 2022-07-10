@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPanel" prefHeight="598.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.AccountPageController">
+<AnchorPane fx:id="mainPanel" prefHeight="598.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.AccountPageController">
    <children>
       <HBox layoutX="45.0" layoutY="292.0" prefHeight="300.0" prefWidth="675.0">
          <children>
@@ -15,25 +19,37 @@
                      <font>
                         <Font name="Inder" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="delAcc" mnemonicParsing="false" onAction="#deletact" prefHeight="0.0" prefWidth="187.0" style="-fx-background-color: #F0003A; -fx-background-radius: 15;" text="Delete Account" textFill="WHITE">
                      <font>
                         <Font name="Inder" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
             </VBox>
             <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="265.0" prefWidth="225.0" spacing="60.0">
                <children>
-                  <Button fx:id="setPro" mnemonicParsing="false" prefHeight="0.0" prefWidth="187.0" style="-fx-background-color: #006dec; -fx-background-radius: 15;" text="Set Profile Photo" textFill="WHITE">
+                  <Button fx:id="setPro" mnemonicParsing="false" onAction="#chooseprofilephoto" prefHeight="0.0" prefWidth="187.0" style="-fx-background-color: #006dec; -fx-background-radius: 15;" text="Set Profile Photo" textFill="WHITE">
                      <font>
                         <Font name="Inder" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="logOut" layoutX="29.0" layoutY="125.0" mnemonicParsing="false" onAction="#logout" prefHeight="0.0" prefWidth="187.0" style="-fx-background-color: #ff9213; -fx-background-radius: 15;" text="Log Out" textFill="WHITE">
                      <font>
                         <Font name="Inder" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
             </VBox>
@@ -43,11 +59,17 @@
                      <font>
                         <Font name="Inder" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button fx:id="buyPre" mnemonicParsing="false" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: #9700FF; -fx-background-radius: 15;" text="Buy Premium" textFill="WHITE">
+                  <Button fx:id="buyPre" mnemonicParsing="false" onAction="#buypremium" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: #9700FF; -fx-background-radius: 15;" text="Buy Premium" textFill="WHITE">
                      <font>
                         <Font name="Inder" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
             </VBox>
@@ -55,27 +77,27 @@
       </HBox>
       <VBox alignment="CENTER_LEFT" layoutX="9.0" layoutY="34.0" prefHeight="265.0" prefWidth="310.0" spacing="22.0">
          <children>
-            <Label text="Full Name :">
+            <Label fx:id="fn" text="Full Name :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="10.0" text="Username : ">
+            <Label fx:id="un" layoutX="10.0" layoutY="10.0" text="Username : ">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="43.0" text="Location :">
+            <Label fx:id="l" layoutX="10.0" layoutY="43.0" text="Location :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="76.0" text="Phone Number :">
+            <Label fx:id="pn" layoutX="10.0" layoutY="76.0" text="Phone Number :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="109.0" text="Email Address :">
+            <Label fx:id="ea" layoutX="10.0" layoutY="109.0" text="Email Address :">
                <font>
                   <Font name="Consolas" size="24.0" />
                </font>

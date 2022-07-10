@@ -30,9 +30,9 @@
       </Label>
       <ScrollPane fx:id="scroll" layoutX="57.0" layoutY="328.0" prefHeight="271.0" prefWidth="647.0">
          <content>
-            <HBox fx:id="roomBox" alignment="CENTER_LEFT" prefHeight="250.0" prefWidth="644.0" spacing="13.0">
+            <HBox fx:id="roomBox" alignment="CENTER_LEFT" prefHeight="250.0" prefWidth="644.0" spacing="5.0">
                <padding>
-                  <Insets left="15.0" right="15.0" top="15.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <opaqueInsets>
                   <Insets />

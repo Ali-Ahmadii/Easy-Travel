@@ -19,14 +19,11 @@
 #scroll {
     -fx-background-color: #ff9212;
 }
-#exploreLable {
-    -fx-text-fill: #555555;
-}
 #search1 {
     -fx-border-color: #dddddd;
     -fx-background-color : #ffffff;
 }
-#search2 {
+#searchfield {
     -fx-border-color: #dddddd;
     -fx-background-color : #ffffff;
 }
@@ -36,6 +33,68 @@
 #email {
     -fx-text-fill: #656565;
 }
-/*------------------------
+/*------------------------*/
+.text-field {
+    -fx-text-fill: #202020;
+}
+.radio-button {
+    -fx-text-fill: #202020;
+}
+#accountBalance {
+    -fx-text-fill: #202020;
+}
+#fn{
+    -fx-text-fill: #202020;
+}
+#un{
+    -fx-text-fill: #202020;
+}
+#l{
+    -fx-text-fill: #202020;
+}
+#pn{
+    -fx-text-fill: #202020;
+}
+#ea{
+    -fx-text-fill: #202020;
+}
 
-
+#fullNameL{
+    -fx-text-fill: #202020;
+}
+#usernameL{
+    -fx-text-fill: #202020;
+}
+#locationL{
+    -fx-text-fill: #202020;
+}
+#phoneNumberL{
+    -fx-text-fill: #202020;
+}
+#emailL{
+    -fx-text-fill: #202020;
+}
+.text-area .content {
+    -fx-background-color: #dbdbdb;
+}
+.text-area {
+    -fx-text-fill: #191919;
+}
+#hBox {
+    -fx-background-color: #fcfcfc;
+}
+#roomBox{
+    -fx-background-color: #fcfcfc;
+}
+#roomAnchor {
+    -fx-background-color: #eeeeee;
+}
+#resultBox {
+    -fx-background-color: #fcfcfc;;
+}
+#searchLabel {
+    -fx-text-fill: #202020;
+}
+#currentRentedRoom {
+    -fx-text-fill: #202020;
+}

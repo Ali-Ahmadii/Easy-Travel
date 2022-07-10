@@ -23,7 +23,7 @@
     -fx-border-color: #dddddd;
     -fx-background-color : #ffffff;
 }
-#search2 {
+#searchfield {
     -fx-border-color: #dddddd;
     -fx-background-color : #ffffff;
 }
@@ -72,5 +72,29 @@
     -fx-text-fill: #202020;
 }
 #emailL{
+    -fx-text-fill: #202020;
+}
+.text-area .content {
+    -fx-background-color: #dbdbdb;
+}
+.text-area {
+    -fx-text-fill: #191919;
+}
+#hBox {
+    -fx-background-color: #fcfcfc;
+}
+#roomBox{
+    -fx-background-color: #fcfcfc;
+}
+#roomAnchor {
+    -fx-background-color: #eeeeee;
+}
+#resultBox {
+    -fx-background-color: #fcfcfc;;
+}
+#searchLabel {
+    -fx-text-fill: #202020;
+}
+#currentRentedRoom {
     -fx-text-fill: #202020;
 }

@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.TopPanel">
    <children>
-      <TextField fx:id="search2" focusTraversable="false" layoutX="370.0" layoutY="20.0" onAction="#search" prefHeight="40.0" prefWidth="358.0" promptText="Search destinations" style="-fx-background-radius: 0 12 12 0; -fx-border-style: solid; -fx-border-radius: 0 12 12 0; -fx-border-width: 1 1 1 0;">
+      <TextField fx:id="searchfield" focusTraversable="false" layoutX="370.0" layoutY="13.0" onAction="#search" prefHeight="40.0" prefWidth="358.0" promptText="Search destinations" style="-fx-background-radius: 0 12 12 0; -fx-border-style: solid; -fx-border-radius: 0 12 12 0; -fx-border-width: 1 1 1 0;">
          <font>
             <Font name="Inter Regular" size="16.0" />
          </font>
       </TextField>
-      <Label fx:id="search1" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="330.0" layoutY="20.0" onMouseClicked="#search" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 12 0 0 12; -fx-border-style: solid; -fx-border-width: 1 0 1 1; -fx-border-radius: 12 0 0 12;">
+      <Label fx:id="search1" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="330.0" layoutY="13.0" onMouseClicked="#search" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 12 0 0 12; -fx-border-style: solid; -fx-border-width: 1 0 1 1; -fx-border-radius: 12 0 0 12;">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -22,6 +24,21 @@
                </image>
             </ImageView>
          </graphic>
+      </Label>
+      <Label fx:id="suggestLabel" alignment="CENTER" layoutX="500.0" layoutY="39.0" prefHeight="34.0" prefWidth="254.0" style="-fx-background-color: #ff6200; -fx-text-fill: white; -fx-background-radius: 0 20 20 20;">
+         <font>
+            <Font name="Inter Bold" size="20.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="797.0" layoutY="124.0" prefHeight="268.0" prefWidth="270.0">
+         <content>
+            <HBox fx:id="resultBox" alignment="CENTER" prefHeight="250.0" prefWidth="268.0" spacing="10.0" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="searchLabel" layoutX="837.0" layoutY="94.0" text="Search Results . . .">
+         <font>
+            <Font name="Inter Bold" size="22.0" />
+         </font>
       </Label>
    </children>
 </AnchorPane>

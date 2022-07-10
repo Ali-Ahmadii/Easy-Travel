@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox fx:id="mainPanel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="190.0" spacing="12.0" style="-fx-background-color: #8aff82; -fx-background-radius: 18;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.RecentTransitionController">
+   <children>
+      <Label fx:id="message" text="Charging was unSuccessful" textFill="#027900">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="amount" text="\$100 " textFill="#007c11">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="cardNumber" text="5554  8746  1356  7613" textFill="#940000">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="37.0" prefWidth="190.0" spacing="5.0">
+         <children>
+            <Label fx:id="date" prefHeight="25.0" prefWidth="86.0" text="2022/05/12">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="time" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="92.0" text="11:28:59 PM">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="3.0" top="10.0" />
+   </padding>
+</VBox>

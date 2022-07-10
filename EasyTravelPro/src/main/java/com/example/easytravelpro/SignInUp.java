@@ -46,11 +46,7 @@ public class SignInUp implements Initializable  {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        textFields.add(usernameSu);
-        textFields.add(fullName);
-        textFields.add(location);
-        textFields.add(phoneNumber);
-        textFields.add(email);
+
 
         userType.getItems().addAll(userTypeList);
         userType.setOnAction(this::userChoice);
@@ -62,13 +58,20 @@ public class SignInUp implements Initializable  {
 
     public void userChoice(ActionEvent event) {
         currentUserType = userType.getValue();
-        System.out.println("HEYYY");
+        if (currentUserType.equals(userTypeList[0])) fullName.setPromptText("Full Name");
+        else fullName.setPromptText("Hotel Name");
     }
 
     static ArrayList<Passenger> passengers = new ArrayList<>();
     static ArrayList<Hotelier> hoteliers = new ArrayList<>();
     static int i = 0;
     public void signUp(ActionEvent event) throws IOException, SQLException {
+        textFields.clear();
+        textFields.add(usernameSu);
+        textFields.add(fullName);
+        textFields.add(location);
+        textFields.add(phoneNumber);
+        textFields.add(email);
         if (Method.searchEmptyField(textFields) && !(passwordSu.getText().equals(""))) {
             usernameSuField = usernameSu.getText();
             passwordSuField = passwordSu.getText();
@@ -89,11 +92,20 @@ public class SignInUp implements Initializable  {
                     PreparedStatement insertme = con.prepareStatement("INSERT INTO passengers (UserName,FullName,Location,PhoneNumber,Email,Password,Balance) VALUES" + "('" + usernameSuField + "','" + fullNameField + "','" + locationField + "','" + phoneNumberField + "','" + emailField + "','" + passwordSuField + "','" +String.valueOf(0)+"')");
                     insertme.execute();
                     con.close();
-//                    RightPanel.Name = usernameSuField;
-//                    RightPanel.Email = emailField;
                     Method.user = usernameSuField;
                     i++;
                     enteredToApp = true;
+                    ExplorePageController.realuser = usernameSuField;
+                    RightPanel.Name = usernameSuField;
+                    RightPanel.Email = emailField;
+                    AccountPageController.username = usernameSuField;
+                    AccountPageController.email = emailField;
+                    AccountPageController.location = locationField;
+                    AccountPageController.phonenumber = phoneNumberField;
+                    AccountPageController.email = emailField;
+                    AccountPageController.fullname = fullNameField;
+                    AccountPageController.Balance = "0";
+                    PaymentPageController.entered = true;
                     Method.notification(Alert.AlertType.INFORMATION, "Welcome", "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
                     Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
@@ -101,6 +113,8 @@ public class SignInUp implements Initializable  {
                     scene.setFill(Color.TRANSPARENT);
                     stage.setScene(scene);
                     stage.show();
+                    if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+                    else scene.getStylesheets().add(Main.cssStyleLight);
                 }
                 if(x || y){
                     Method.notification(Alert.AlertType.ERROR, "Error!",
@@ -121,13 +135,11 @@ public class SignInUp implements Initializable  {
                     PreparedStatement insertme = con.prepareStatement("INSERT INTO hotel (UserName,HotelName,Location,PhoneNumber,Email,Password,RoomsCount,RoomCollection) VALUES" + "('" + usernameSuField + "','" + fullNameField + "','" + locationField + "','" + phoneNumberField + "','" + emailField + "','" + passwordSuField+"','"+"0','"+"0"+"')");
                     insertme.execute();
                     con.close();
-
-
-
                     j++;
                     Method.user = usernameSuField;
                     System.out.println(hotelname);
                     HotelierController.hotelName = usernameSu.getText();
+                    HotelierController.userhotel = usernameSuField;
                     enteredToHotelierUI=true;
                     enteredToApp = true;
                     Method.notification(Alert.AlertType.INFORMATION, "Welcome", "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
@@ -137,6 +149,8 @@ public class SignInUp implements Initializable  {
                     scene.setFill(Color.TRANSPARENT);
                     stage.setScene(scene);
                     stage.show();
+                        if (Main.isDark) scene.getStylesheets().add(Main.hotelierStyleDark);
+                        else scene.getStylesheets().add(Main.hotelierStyleLight);
                 }
                 if(x || y){
                     Method.notification(Alert.AlertType.ERROR, "Error!",
@@ -176,7 +190,6 @@ public class SignInUp implements Initializable  {
                     enteredToHotelierUI=true;
                     HotelierController.userhotel = usernameSi.getText();
                     HotelierController.hotelName = usernameSi.getText();
-                    System.out.println(usernameSi.getText());
                     Method.notification(Alert.AlertType.INFORMATION, "Welcome", "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Hotelier.fxml")));
                     Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
@@ -184,6 +197,8 @@ public class SignInUp implements Initializable  {
                     scene.setFill(Color.TRANSPARENT);
                     stage.setScene(scene);
                     stage.show();
+                        if (Main.isDark) scene.getStylesheets().add(Main.hotelierStyleDark);
+                        else scene.getStylesheets().add(Main.hotelierStyleLight);
                 }
                 else{
                     Method.notification(Alert.AlertType.ERROR, "Error!", "Wrong UserName Or Password", "Please Re Write Your Account Information");
@@ -230,6 +245,8 @@ public class SignInUp implements Initializable  {
                 setemailinfos.next();
                 RightPanel.Email = x;
                 RightPanel.Name = usernameSi.getText();
+                PaymentPageController.entered = true;
+                ExplorePageController.realuser = usernameSi.getText();
                 enteredToApp = true;
                 Method.notification(Alert.AlertType.INFORMATION, "Welcome", "Success Sign Up ", "welcome to our Application\nGood Luck ;)");
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Frame.fxml")));
@@ -238,6 +255,8 @@ public class SignInUp implements Initializable  {
                 scene.setFill(Color.TRANSPARENT);
                 stage.setScene(scene);
                 stage.show();
+                if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+                else scene.getStylesheets().add(Main.cssStyleLight);
                 newconnection.close();
             }
             else{
@@ -245,8 +264,17 @@ public class SignInUp implements Initializable  {
             }
         }
         if(adminbool){
+            Main.isDark = true;
             //Move To Admin Page
             System.out.println("Hello Admin");
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminPage.fxml")));
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(Main.cssStyleDark);
+            scene.setFill(Color.TRANSPARENT);
+            stage.setScene(scene);
+            Animation.Fade(root,400,800,0,1);
+            stage.show();
         }
         if((!(hotelierbool || passengerbool || adminbool))){
             Method.notification(Alert.AlertType.ERROR, "Error!", "Wrong UserName Or Password", "Please Re Write Your Account Information");
@@ -324,6 +352,8 @@ public class SignInUp implements Initializable  {
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
+        if (Main.isDark) scene.getStylesheets().add(Main.cssStyleDark);
+        else scene.getStylesheets().add(Main.cssStyleLight);
         textFields.clear();
     }
 }

@@ -6,12 +6,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="673.0" prefWidth="900.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.HotelierController">
+<AnchorPane prefHeight="673.0" prefWidth="900.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easytravelpro.HotelierController">
    <children>
       <Label layoutX="14.0" layoutY="97.0" text="Current Rooms" textFill="#757575">
          <font>
@@ -25,7 +27,7 @@
       </Label>
       <VBox alignment="CENTER" layoutX="599.0" layoutY="131.0" prefHeight="263.0" prefWidth="289.0" spacing="20.0" style="-fx-border-color: #004690; -fx-border-radius: 15; -fx-border-width: 2;">
          <children>
-            <TextField fx:id="capacity" prefHeight="18.0" prefWidth="152.0" promptText="Capacity :" style="-fx-background-color: rgba(0,0,0,0); -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 2 0;">
+            <TextField fx:id="capacity" prefHeight="18.0" prefWidth="152.0" promptText="Capacity :" style="-fx-background-color: rgba(0, 0, 0, 0);; -fx-border-style: solid; -fx-border-color: #403d39; -fx-border-width: 0 0 2 0;">
                <font>
                   <Font name="Inder" size="16.0" />
                </font>
@@ -70,7 +72,7 @@
             </HBox>
          </content>
       </ScrollPane>
-      <Label fx:id="hotelNameLabel" layoutX="14.0" layoutY="15.0" prefHeight="25.0" prefWidth="709.0" text="Loading . . ." textFill="#425fd3">
+      <Label fx:id="hotelNameLabel" layoutX="12.0" layoutY="3.0" prefHeight="25.0" prefWidth="709.0" text="Loading . . ." textFill="#425fd3">
          <font>
             <Font name="Salsa-Regular" size="42.0" />
          </font>
@@ -100,5 +102,33 @@
             </HBox>
          </content>
       </ScrollPane>
+      <Button fx:id="export1" layoutX="201.0" layoutY="87.0" mnemonicParsing="false" onAction="#exportroomsinfo" prefHeight="38.0" prefWidth="202.0" style="-fx-background-color: #00ffc8; -fx-background-radius: 13 13 13 0;" text="Export Rooms Information">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Icons/excel.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="export2" layoutX="410.0" layoutY="87.0" mnemonicParsing="false" onAction="#exportbuyinformation" prefHeight="38.0" prefWidth="166.0" style="-fx-background-color: #00ffc8; -fx-background-radius: 13 13 13 0;" text="Export Selling Information">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="accountBalance" layoutX="14.0" layoutY="65.0" text="Account Balance: $780" textFill="#4a4a4a">
+         <font>
+            <Font name="Inter Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
